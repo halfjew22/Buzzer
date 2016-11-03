@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase firebase = FirebaseDatabase.getInstance();
     DatabaseReference buzzingRef = firebase.getReference("buzzing");
 
+//  TODO (2) Declare a Vibrator field called buzzer
     private Vibrator buzzer;
 
     private boolean isBuzzing = false;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         buzzerButton = (Button) findViewById(R.id.buzzerButton);
         buzzingMessage = (TextView) findViewById(R.id.buzzingMessage);
 
+//      TODO (3) Instantiate the buzzer field
         buzzer = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         buzzingRef.addValueEventListener(new ValueEventListener() {
@@ -56,12 +58,14 @@ public class MainActivity extends AppCompatActivity {
         String messageText;
 
         if (shouldBuzz) {
+//          TODO (4) If we should buzz, vibrate the phone
             long pattern[] = {0, 1000};
             buzzer.vibrate(pattern, 0);
             isBuzzing = true;
             buttonText = "end the buzzing";
             messageText = "BZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZ";
         } else {
+//          TODO (5) If not, cancel any vibration
             buzzer.cancel();
             isBuzzing = false;
             buttonText = "start buzzing";

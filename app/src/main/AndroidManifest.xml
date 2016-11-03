@@ -4,6 +4,8 @@
     package="mlustig.com.buzzer">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- TODO (1) Add the VIBRATE permission -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
