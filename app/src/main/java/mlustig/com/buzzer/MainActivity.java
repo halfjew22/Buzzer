@@ -1,8 +1,6 @@
 package mlustig.com.buzzer;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference buzzingRef = firebase.getReference("buzzing");
 
 //  TODO (2) Declare a Vibrator field called buzzer
-    private Vibrator buzzer;
 
     private boolean isBuzzing = false;
 
@@ -36,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         buzzingMessage = (TextView) findViewById(R.id.buzzingMessage);
 
 //      TODO (3) Instantiate the buzzer field
-        buzzer = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         buzzingRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -59,14 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (shouldBuzz) {
 //          TODO (4) If we should buzz, vibrate the phone
-            long pattern[] = {0, 1000};
-            buzzer.vibrate(pattern, 0);
             isBuzzing = true;
             buttonText = "end the buzzing";
             messageText = "BZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZ";
         } else {
 //          TODO (5) If not, cancel any vibration
-            buzzer.cancel();
             isBuzzing = false;
             buttonText = "start buzzing";
             messageText = "<SIGH> peace and quiet.";
