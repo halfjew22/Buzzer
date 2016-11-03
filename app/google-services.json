@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "371631852988",
+    "firebase_url": "https://buzzer-9768e.firebaseio.com",
+    "project_id": "buzzer-9768e",
+    "storage_bucket": "buzzer-9768e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371631852988:android:0f0d813abc00d3cc",
+        "android_client_info": {
+          "package_name": "mlustig.com.buzzer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371631852988-2483cr88c4jbpia5s090por0ba8avjgk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mlustig.com.buzzer",
+            "certificate_hash": "031C7866F2D3EC0DAD3385939576B154D4F20E85"
+          }
+        },
+        {
+          "client_id": "371631852988-d6nskpm40vhrvpg1ochp0sq4jup4k6e1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPy9oSWzCBalj1VIU-fLHhIEcGkUVYhzU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371631852988-d6nskpm40vhrvpg1ochp0sq4jup4k6e1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
