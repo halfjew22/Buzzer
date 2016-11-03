@@ -26,9 +26,10 @@ dependencies {
     })
 
     compile 'com.android.support:appcompat-v7:25.0.0'
+//  TODO (5) Add the firebase-database (with the proper version) dependency
     compile 'com.google.firebase:firebase-database:9.8.0'
     testCompile 'junit:junit:4.12'
 }
 
-
+// TODO (4) Apply the google-services plugin
 apply plugin: 'com.google.gms.google-services'
