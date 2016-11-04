@@ -13,15 +13,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-// TODO (1) Use Android Studio to create a Firebase project for your app
-// TODO (2) FOR DEMO PURPOSES ONLY, set your read / write access to true
-
 public class MainActivity extends AppCompatActivity {
 
-//  TODO (6) Get an instance of your Firebase
     FirebaseDatabase firebase = FirebaseDatabase.getInstance();
-//  TODO (7) From your Firebase, get a reference to the "buzzing" field
     DatabaseReference buzzingRef = firebase.getReference("buzzing");
+
+//  TODO (1) Instantiate a boolean field called isBuzzing to false
 
     private TextView buzzingMessage;
     private Button buzzerButton;
@@ -34,12 +31,11 @@ public class MainActivity extends AppCompatActivity {
         buzzerButton = (Button) findViewById(R.id.buzzerButton);
         buzzingMessage = (TextView) findViewById(R.id.buzzingMessage);
 
-//      TODO (8) Add a ValueEventListener to the buzzingRef
         buzzingRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-//              TODO (9) When the data changes, log the boolean value
                 boolean shouldBuzz = dataSnapshot.getValue(Boolean.class);
+//              TODO (7) Pass shouldBuzz to setBuzzing (and remove the log message)
                 Log.d("Lustig", "onDataChange: shouldBuzz: " + shouldBuzz);
             }
 
@@ -50,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+//  TODO (2) Create a method that accepts a boolean to buzz this device
+
+//          TODO (3) If we should start buzzing, set buzzing to true and setup buzzing messages
+//          TODO (4) If we shouldn't buzz, set buzzing to false and setup buzzing messages
+
+//      TODO (5) Display the buzzing messages
+
+
+//  TODO (6) Fill in this method with logic to toggle everyone's buzzzzzzzzzzz
     public void onToggleBuzzButtonClick(View view) {
 
     }
