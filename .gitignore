@@ -39,3 +39,6 @@ project.properties
 # Gradle-based build
 .gradle
 build/
+
+# Don't check this file into source control - it contains sensitive info
+app/google-services.json
