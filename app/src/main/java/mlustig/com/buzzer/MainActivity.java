@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase firebase = FirebaseDatabase.getInstance();
     DatabaseReference buzzingRef = firebase.getReference("buzzing");
 
-//  TODO (1) Instantiate a boolean field called isBuzzing to false
+//  TODO (2) Declare a Vibrator field called buzzer
+
     private boolean isBuzzing = false;
 
     private TextView buzzingMessage;
@@ -31,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
         buzzerButton = (Button) findViewById(R.id.buzzerButton);
         buzzingMessage = (TextView) findViewById(R.id.buzzingMessage);
 
+//      TODO (3) Instantiate the buzzer field
+
         buzzingRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 boolean shouldBuzz = dataSnapshot.getValue(Boolean.class);
-//              TODO (7) Pass shouldBuzz to setBuzzing (and remove the log message)
                 setBuzzing(shouldBuzz);
             }
 
@@ -46,30 +48,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//  TODO (2) Create a method that accepts a boolean to buzz this device
     private void setBuzzing(boolean shouldBuzz) {
 
         String buttonText;
         String messageText;
 
         if (shouldBuzz) {
-//          TODO (3) If we should start buzzing, set buzzing to true and setup buzzing messages
+//          TODO (4) If we should buzz, vibrate the phone
             isBuzzing = true;
             buttonText = "end the buzzing";
             messageText = "BZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZBZZZZZZZZVVVVVVZZZZZZZZZZ";
         } else {
-//          TODO (4) If we shouldn't buzz, set buzzing to false and setup buzzing messages
+//          TODO (5) If not, cancel any vibration
             isBuzzing = false;
             buttonText = "start buzzing";
             messageText = "<SIGH> peace and quiet.";
         }
 
-//      TODO (5) Display the buzzing messages
         buzzerButton.setText(buttonText);
         buzzingMessage.setText(messageText);
     }
 
-//  TODO (6) Fill in this method with logic to toggle everyone's buzzzzzzzzzzz
     public void onToggleBuzzButtonClick(View view) {
 
         boolean shouldBuzz = !isBuzzing;
