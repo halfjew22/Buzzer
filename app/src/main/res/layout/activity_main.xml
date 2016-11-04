@@ -18,6 +18,13 @@
         android:text="Hello World!"/>
 
     <Button
+        android:layout_above="@+id/buzzerButton"
+        android:text="Push"
+        android:onClick="sendPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
         android:id="@+id/buzzerButton"
         android:onClick="onToggleBuzzButtonClick"
         android:layout_alignParentBottom="true"
